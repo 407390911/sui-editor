@@ -86,6 +86,15 @@ module.exports = function(grunt) {
         dest: '<%= distRoot %>/editor/js/<%= pkg.name %>.js'
       }
     },
+    uglify: {
+      options: {
+        sourceMap: false
+      },
+      build: {
+        src: ['<%= distRoot %>/editor/js/<%= pkg.name %>.js'],
+        dest: '<%= distRoot %>/editor/js/<%= pkg.name %>.min.js'
+      }
+    },
     less: {
       build: {
         src: ['themes/default/less/<%= pkg.name %>.less'],
@@ -122,9 +131,19 @@ module.exports = function(grunt) {
           { expand: true, cwd: 'lang', src:["**/*"], dest: '<%= distRoot %>/lang' },
         ]
       },
+    },
+    watch: {
+      less: {
+        files: ['themes/default/less/**/*.less'],
+        tasks: ['less']
+      },
+      js: {
+        files: ['_src/**/*.js'],
+        tasks: ['concat']
+      }
     }
   });
 
-  grunt.registerTask('default', ["concat", "less", 'copy', 'ejs']);
+  grunt.registerTask('default', ["concat", "uglify", "less", 'copy', 'ejs']);
 
 };
