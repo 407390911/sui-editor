@@ -57,7 +57,7 @@ UM.registerUI('paragraph fontfamily fontsize', function( name ) {
         comboboxWidget.button().edui().disabled( state == -1 ).active( state == 1 );
         if(value){
             //设置label
-            value = value.replace(/['"]/g, '').toLowerCase().split(/['|"]?\s*,\s*[\1]?/);
+            value = value.replace(/['"]/g, '').toLowerCase().split(/['|"]?\s*,\s*[\1]?/);//"
 
             comboboxWidget.selectItemByLabel( value );
         }
