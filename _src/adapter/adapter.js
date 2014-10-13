@@ -249,7 +249,7 @@
           self[0] = $("#" + id)[0];
         });
         //当是一个查询命令的时候返回查询结果，否则返回jQuery对象以进行链式操作
-        if(typeof cmd === typeof "A" && isGetOpt(cmd) || cmd === "execCommand") {
+        if(typeof cmd === typeof "A" && isGetOp(cmd) || cmd === "execCommand") {
           return result;
         }
         return this
