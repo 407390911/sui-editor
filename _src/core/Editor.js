@@ -426,6 +426,9 @@
             $(this.body).width(width - $(this.body).css('padding-left').replace('px','') * 1 - $(this.body).css('padding-right').replace('px','') * 1);
             this.fireEvent('resize');
         },
+        getSelection: function() {
+          return this.selection;
+        },
         addshortcutkey: function (cmd, keys) {
             var obj = {};
             if (keys) {

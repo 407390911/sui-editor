@@ -219,7 +219,7 @@
 
     })
 
-        // 使用jquery风格的接口
+    // 使用jquery风格的接口
     // 目前只能操作一个
     $.fn.extend({
       editor: function(cmd) {
@@ -246,7 +246,7 @@
           self[0] = $("#" + id)[0];
         });
         //当是一个查询命令的时候返回查询结果，否则返回jQuery对象以进行链式操作
-        if(typeof cmd === typeof "A" && /^(get|is)/.test(cmd)) {
+        if(typeof cmd === typeof "A" && /^(get|is|has)/.test(cmd)) {
           return result;
         }
         return this
