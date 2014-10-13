@@ -133,7 +133,7 @@
                 for ( var i = 1; i <= tempName[1]; i++ ) {
                     tempStr = tempName[0];
                     // if ( i < 10 ) tempStr = tempStr + '0';
-                    tempStr = tempStr + i + '.gif';
+                    tempStr = tempStr + (i-1) + '.gif';
                     tempBox.push( tempStr );
                 }
             }
